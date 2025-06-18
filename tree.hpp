@@ -51,7 +51,7 @@ public:
 
         if (num.size() != 15)
         {
-            return "null";
+            return "wrong number";
         }
 
         for (size_t i = 0; i < num.size(); ++i)
@@ -104,12 +104,9 @@ void test(const std::string& filename, const trie& trie)
         std::stringstream ss(line);
         std::string num, expectedId;
 
-        std::getline(ss, num, ',');
-        std::getline(ss, expectedId, ',');
+        std::getline(ss, num);
         std::string foundId = trie.find(num);
 
-        std::cout << "Number: " << num << ", Found: " << foundId
-                  << ", Expected: " << expectedId
-                  << (foundId == expectedId ? " [OK]" : " [FAIL]") << '\n';
+        std::cout << "Number: " << num << ", Found: " << foundId << std::endl;
     }
 }
