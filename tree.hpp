@@ -104,7 +104,7 @@ void test(const std::string& filename, const trie& trie)
         std::stringstream ss(line);
         std::string num, expectedId;
 
-        std::getline(ss, num);
+        std::getline(ss, num, ',');
         std::string foundId = trie.find(num);
 
         std::cout << "Number: " << num << ", Found: " << foundId << std::endl;
