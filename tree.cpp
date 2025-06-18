@@ -45,7 +45,7 @@ std::string trie::find(const std::string &num) const
             }
         }
     }
-    return resultId.empty() ? "null" : resultId;
+    return resultId.empty() ? "not found range" : resultId;
 }
 
 void loadRanges(const std::string &filename, trie &trie)
